@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>city weather</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        
+        border: 2px solid aliceblue;
+        border-radius: 5px;
+        margin: 4%;
+        background-color: #272727;
+        color: aliceblue;
+    }
+
+    h4{
+        font-size: 1.5rem;
+    }
+
+    h1 {
+
+        font-size: 2.5rem;
+    }
+    
+
+    button{
+        margin-bottom: 2%;
+        padding: 10px;
+        
+        padding-left: 80px;
+        padding-right: 80px;
+        
+        font-weight: 900;
+        border-radius: 5px;
+    }
+
+    button:hover{
+        
+        cursor: pointer;
+    }
+
+    .img{
+        display: flex;
+       
+        justify-content: center;
+        margin-top: -30px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Temperature in <span class="specialText"><%= cityName %></span> is <%= temp %><span>&#176;</span>C</h1>
+        <h4>Temperature feels like <%= fellTemp %><span>&#176;</span></h4>
+        <div class="img">
+            <h4> weather description: <%= weatherDescription %></h4>
+            <img src='<%= icon %>' >
+        </div>
+        <form action="/views/finalPage.ejs" method="post">
+            <button type="submit">Go Back</button>
+        </form>
+    </div>
+    <script>
+        var temp1 = <%= temp %> ;
+        
+        if(temp1 < 0){
+            document.querySelector('body').style.backgroundColor = "#90A9B7";
+            document.querySelector('button').style.backgroundColor = "#90A9B7";
+            document.querySelectorAll('.specialText').style.color = "#90A9B7";
+        }else if(temp1 >=0 && temp1 <20){
+            document.querySelector('body').style.backgroundColor = "#D4AA7D";
+            document.querySelector('button').style.backgroundColor = "#D4AA7D";
+            document.querySelector('.specialText').style.color = "#D4AA7D";
+        }else if(temp1 >=20 && temp1<40){
+            document.querySelector('body').style.backgroundColor = "#D2D8B3";
+            document.querySelector('button').style.backgroundColor = "#D2D8B3";
+            document.querySelector('.specialText').style.color = "#D2D8B3";
+        }else{
+            document.querySelector('body').style.backgroundColor = "#EFD09E";
+            document.querySelector('button').style.backgroundColor = "#EFD09E";
+            document.querySelector('.specialText').style.color = "#EFD09E";
+        }
+    </script>
+</body>
+
+
+</html>
