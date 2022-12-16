@@ -52,6 +52,6 @@ app.post("/views/finalPage.ejs" , function(req , res){
 
 
 
-app.listen(3000 , '0.0.0.0' , function(){
+app.listen(process.env.PORT || 3000 , function(){
     console.log("My server is running as hell on port 3000");
 })
