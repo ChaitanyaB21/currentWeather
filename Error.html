@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>city not found Alert</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+        background-color: rgb(245, 122, 122);
+    }
+
+    .container {
+
+        border: 2px solid aliceblue;
+        border-radius: 5px;
+        margin: 4%;
+        background-color: #272727;
+        color: aliceblue;
+    }
+
+    h1 {
+
+        font-size: 2.5rem;
+    }
+
+
+    button {
+        background-color: rgb(245, 122, 122);
+        margin-bottom: 2%;
+        padding: 10px;
+        box-shadow:  3px 3px aliceblue;
+        padding-left: 80px;
+        padding-right: 80px;
+        font-weight: 900;
+        border-radius: 5px;
+        transition: 0.25s ease;
+    }
+
+    button:hover {
+        transform: translate(0, 3px);
+        cursor: pointer;
+        box-shadow: none;
+    }
+
+    
+</style>
+
+<body>
+    <div class="container">
+        <h1>City not found!!!</h1>
+        <h3>Please enter the City name correctly.</h3>
+        <form action="/Error.html" method="post">
+            <button type="submit">Go Back</button>
+        </form>
+    </div>
+</body>
+
+
+</html>
